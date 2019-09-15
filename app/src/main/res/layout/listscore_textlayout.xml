@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/imgStar"
+                android:background="@drawable/star"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp" />
+
+            <TextView
+                android:layout_toRightOf="@+id/imgStar"
+                android:layout_gravity="center"
+                android:layout_marginRight="50dp"
+                android:id="@+id/playerName"
+                android:text="NAME"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:fontFamily="@font/mregular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginRight="15dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center|start"
+                android:id="@+id/playerScore"
+                android:text="SCORE"
+                android:textStyle="bold"
+                android:fontFamily="@font/mregular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

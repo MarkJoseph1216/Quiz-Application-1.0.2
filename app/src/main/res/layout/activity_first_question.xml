@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/relativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstQuestion">
+
+    <ImageView
+        android:background="@drawable/imgbackground"
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="385dp" />
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:id="@+id/txtEasyTitle"
+        android:textSize="22sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:text="Easy Level Question"
+        android:fontFamily="@font/mregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/txtQuestion1"
+        android:fontFamily="serif"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/txtEasyTitle"
+        android:text="If you are ambivalent with the answers, analyze the given problem."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:layout_marginRight="25dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/imgBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:textSize="20sp"
+            android:fontFamily="@font/mregular"
+            android:text="Confusion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioButton
+            android:textSize="20sp"
+            android:fontFamily="@font/mregular"
+            android:text="Innocent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioButton
+            android:textSize="20sp"
+            android:fontFamily="@font/mregular"
+            android:text="Uncertain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioButton
+            android:textSize="20sp"
+            android:fontFamily="@font/mregular"
+            android:text="Unaware"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:background="@drawable/btn_outline"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="NEXT"
+        android:layout_width="150dp"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

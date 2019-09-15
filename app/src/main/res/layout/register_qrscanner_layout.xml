@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_centerInParent="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:background="@color/green"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:textColor="#fff"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/mregular"
+                    android:text="READ QR CODE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:theme="@style/TextInputLayoutAppearance"
+                android:id="@+id/inputLayoutCode"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtRegKey"
+                    android:imeOptions="actionDone"
+                    android:hint="Registration Key"
+                    android:fontFamily="@font/mregular"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/inputLayoutCode"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btnReadQRCode"
+                    android:textColor="@color/green"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/mregular"
+                    android:text="Read QR Code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="25dp"/>
+
+                <TextView
+                    android:id="@+id/btnActivate"
+                    android:textColor="@color/skyBlue"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/mregular"
+                    android:text="Activate"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="25dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/btnCancel"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/mregular"
+                    android:text="Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

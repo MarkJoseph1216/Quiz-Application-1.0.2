@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/relativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/skyBlue"
+    tools:context=".AboutUsActivity">
+
+    <ImageView
+        android:id="@+id/imgQuizLogo"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/quizlogo"
+        android:layout_width="140dp"
+        android:layout_height="130dp" />
+
+    <TextView
+        android:id="@+id/txtQuizPower"
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/imgQuizLogo"
+        android:text="Brain Blitz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@+id/txtQuizPower"
+        android:id="@+id/txtExpirationDate"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/mregular"
+        android:text="Expiration Date:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtCreated"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="11dp"
+        android:fontFamily="@font/mregular"
+        android:text="Version: 1.0.0"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtCreated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtDateCreated"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="22dp"
+        android:fontFamily="@font/mregular"
+        android:text="Created by: MarkJoseph Caron and Arvin Cabunoc"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtDateCreated"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:textSize="16sp"
+        android:text="Date Created: July 06, 2019"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

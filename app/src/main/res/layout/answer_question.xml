@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/skyBlue"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="63dp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/arrow_ar"/>
+
+    <TextView
+        android:textColor="#fff"
+        android:fontFamily="@font/mmedium"
+        android:id="@+id/tvSubCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="SubCar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+
+    <TextView
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:text="Easy"
+        android:layout_marginTop="60dp"
+        android:textSize="25dp" />
+
+    <TextView
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:id="@+id/tvQuestions"
+        android:layout_width="302dp"
+        android:layout_height="205dp"
+        android:layout_below="@+id/tvLevel"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="120dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:background="@drawable/btn_outline_white"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_below="@+id/tvQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="60dp">
+
+            <Button
+                android:id="@+id/btnQ1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_outline_white"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:layout_marginBottom="20dp"/>
+            <Button
+                android:id="@+id/btnQ2"
+                android:layout_below="@id/btnQ1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_outline_white"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/white"
+                android:textSize="14dp"/>
+            <Button
+                android:id="@+id/btnQ3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_outline_white"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:layout_marginBottom="20dp"/>
+            <Button
+                android:id="@+id/btnQ4"
+                android:layout_below="@+id/btnQ3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_outline_white"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:textSize="14dp"/>
+
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:layout_marginLeft="55dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:fillViewport="true"
+            android:scrollbars="horizontal|vertical"
+            android:layout_below="@+id/tvQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:gravity="center_vertical"
+            android:id="@+id/mRadioGroupChoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvQuestions"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <RadioButton
+                android:buttonTint="@color/green"
+                android:fontFamily="@font/mregular"
+                android:id="@+id/mRadioButtonChoice1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:singleLine="true"
+                android:textSize="20sp"
+                tools:targetApi="jelly_bean" />
+
+            <RadioButton
+                android:buttonTint="@color/green"
+                android:fontFamily="@font/mregular"
+                android:id="@+id/mRadioButtonChoice2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:singleLine="true"
+                tools:targetApi="jelly_bean" />
+
+            <RadioButton
+                android:buttonTint="@color/green"
+                android:fontFamily="@font/mregular"
+                android:id="@+id/mRadioButtonChoice3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:singleLine="true"
+                tools:targetApi="jelly_bean" />
+
+            <RadioButton
+                android:buttonTint="@color/green"
+                android:fontFamily="@font/mregular"
+                android:id="@+id/mRadioButtonChoice4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:singleLine="true"
+                tools:targetApi="jelly_bean" />
+            </RadioGroup>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/tvScore"
+        android:id="@+id/imgCheckCorrect"
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="@color/red"
+        android:fontFamily="@font/digital"
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Score: 0"
+        android:textSize="35sp" />
+
+    <TextView
+        android:textColor="@color/green"
+        android:fontFamily="@font/digital"
+        android:id="@+id/tvTimer"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Timer:"
+        android:textSize="30sp" />
+
+    <Button
+        android:textStyle="bold"
+        android:fontFamily="@font/mregular"
+        android:id="@+id/btnNext"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:enabled="false"
+        android:text="Next"
+        android:textColor="@color/black"
+        android:background="@drawable/btn_outline"/>
+
+    <TextView
+        android:id="@+id/tvRemainQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:textSize="25dp"
+        android:layout_marginRight="15dp"
+        android:background="#97D8EA"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/tvScoreMust"
+        android:layout_above="@+id/tvScoreResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/tvScoreResult"
+        android:layout_above="@+id/tvRemainQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="0"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tvTimer1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:textSize="25dp"
+        android:text="100"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/btn_outline_white_circle"
+        android:textColor="@color/white"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
+
+
+
+</RelativeLayout>

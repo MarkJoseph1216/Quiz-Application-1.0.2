@@ -32,6 +32,8 @@ public class Home2Activity extends AppCompatActivity {
 
     TextInputEditText edtEnterName;
 
+    public static String musicOff = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -187,6 +189,7 @@ public class Home2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mServ != null) {
+                    musicOff = "true";
                     mServ.pauseMusic();
                 }
             }
@@ -225,7 +228,9 @@ public class Home2Activity extends AppCompatActivity {
                 if (edtInputName.equals("")){
                     Toast.makeText(Home2Activity.this, "Please enter a name first!", Toast.LENGTH_SHORT).show();
                 } else {
-                    startActivity(new Intent(Home2Activity.this, Home.class));
+                    Intent intent = new Intent(Home2Activity.this, Home.class);
+                    intent.putExtra("MusicValue", musicOff);
+                    startActivity(intent);
                     finish();
                 }
             }

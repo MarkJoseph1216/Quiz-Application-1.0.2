@@ -28,6 +28,8 @@ public class Home extends AppCompatActivity {
     HomeWatcher mHomeWatcher;
     TextView tvYes, tvNo, txtTitle;
 
+    public static String musicOff = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +42,36 @@ public class Home extends AppCompatActivity {
         showMenuLayout = new Dialog(Home.this);
         showExitLayout = new Dialog(Home.this);
 
-        doBindService();
-        Intent music = new Intent();
-        music.setClass(this, MusicService.class);
-        startService(music);
+        //Checking if the muteButton is activated from Home2Activity
+        try {
+            Intent intent = getIntent();
+            if (intent != null) {
+                String musicValue = intent.getStringExtra("MusicValue");
+                if (musicValue.equals("true")) {
+                    musicOff = intent.getStringExtra("MusicValue");
+
+                    doUnbindService();
+                    Intent music = new Intent();
+                    music.setClass(this, MusicService.class);
+                    stopService(music);
+                } else {
+                    doBindService();
+                    Intent music = new Intent();
+                    music.setClass(this, MusicService.class);
+                    startService(music);
+                }
+            } else {
+                doBindService();
+                Intent music = new Intent();
+                music.setClass(this, MusicService.class);
+                startService(music);
+            }
+        } catch (Exception e){
+            doBindService();
+            Intent music = new Intent();
+            music.setClass(this, MusicService.class);
+            startService(music);
+        }
 
         mHomeWatcher = new HomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new HomeWatcher.OnHomePressedListener() {
@@ -71,39 +99,86 @@ public class Home extends AppCompatActivity {
         btnVocabulary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                methods.intentMethod(LevelActivity.class);
-                finish();
+                if (musicOff.equals("true")){
+                    Intent intent = new Intent(Home.this, LevelActivity.class);
+                    intent.putExtra("MusicValue", musicOff);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Intent intent = new Intent(Home.this, LevelActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
         btnGrammar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                methods.intentMethod(InstructionActivity.class);
-                questionsCounter(2,6);
-                Questions.intentInt = 2;
-                Questions.iIndex = 3 ;
-                finish();
+                if (musicOff.equals("true")) {
+                    questionsCounter(2, 6);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 3;
+
+                    Intent intent = new Intent(Home.this, InstructionActivity.class);
+                    intent.putExtra("MusicValue", musicOff);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    questionsCounter(2, 6);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 3;
+
+                    Intent intent = new Intent(Home.this, LevelActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
         btnSpelling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                methods.intentMethod(InstructionActivity.class);
-                questionsCounter(3,7);
-                Questions.intentInt = 2;
-                Questions.iIndex = 4 ;
-                finish();
+                if (musicOff.equals("true")) {
+                    questionsCounter(3, 7);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 4;
+
+                    Intent intent = new Intent(Home.this, InstructionActivity.class);
+                    intent.putExtra("MusicValue", musicOff);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    questionsCounter(3, 7);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 4;
+
+                    Intent intent = new Intent(Home.this, InstructionActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
         btnPronun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                methods.intentMethod(InstructionActivity.class);
-                questionsCounter(4,9);
-                Questions.intentInt = 2;
-                Questions.iIndex = 5 ;
-                finish();
+                if (musicOff.equals("true")) {
+                    questionsCounter(4, 9);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 5;
+
+                    Intent intent = new Intent(Home.this, InstructionActivity.class);
+                    intent.putExtra("MusicValue", musicOff);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    questionsCounter(4, 9);
+                    Questions.intentInt = 2;
+                    Questions.iIndex = 5;
+
+                    Intent intent = new Intent(Home.this, InstructionActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
@@ -165,9 +240,11 @@ public class Home extends AppCompatActivity {
         btnMusicON.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mServ != null) {
-                    mServ.resumeMusic();
-                }
+                musicOff = "false";
+                doBindService();
+                Intent music = new Intent();
+                music.setClass(Home.this, MusicService.class);
+                startService(music);
             }
         });
 
@@ -175,6 +252,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mServ != null) {
+                    musicOff = "true";
                     mServ.pauseMusic();
                 }
             }
